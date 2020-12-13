@@ -3,9 +3,12 @@ function animationNumbers(arrObjects) {
 		let number = document.querySelector(selectorNum),
 			numberTop = number.getBoundingClientRect().top;
 
-		window.addEventListener('scroll', function onScroll() {
+		onScroll();
+		window.addEventListener('scroll', onScroll);
+
+		function onScroll() {
 			if (window.pageYOffset > numberTop - window.innerHeight) {
-				this.removeEventListener('scroll', onScroll);
+				window.removeEventListener('scroll', onScroll);
 				let interval = setInterval(() => {
 					number.textContent = ++startNum;
 					if (startNum >= endNum) {
@@ -13,7 +16,7 @@ function animationNumbers(arrObjects) {
 					}
 				}, speedAmimation);
 			}
-		});
+		}
 	});
 }
 
