@@ -1,4 +1,4 @@
-# Js module for animating numbers when scrolling on the site
+# JS module for animating numbers when scrolling on the site
 
 ## You will need to download the file to your project:
 
