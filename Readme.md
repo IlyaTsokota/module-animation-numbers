@@ -26,7 +26,7 @@ animationNumbers([{
 }]);
 ```
 
-**selectorNum** - element selector
-**speedAmimation** - speed animation in miles seconds
-**startNum** - the number at which the animation starts
-**endNum** - the number on which the animation ends
+- **selectorNum** - element selector
+- **speedAmimation** - speed animation in miles seconds
+- **startNum** - the number at which the animation starts
+- **endNum** - the number on which the animation ends
