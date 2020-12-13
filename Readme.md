@@ -1,5 +1,7 @@
 # JS module for animating numbers when scrolling on the site
 
+[Demo](https://ilyatsokota.github.io/module-animation-numbers)
+
 ## You will need to download the file to your project:
 
 **src/js/modules/animationNumbers.js**
