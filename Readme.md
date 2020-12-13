@@ -4,13 +4,13 @@
 
 **src/js/modules/animationNumbers.js**
 
-## How import?
+## How to import?
 
 ```
 import animationNumbers from 'your_path/animationNumbers';
 ```
 
-## How use?
+## How to use?
 
 ```
 animationNumbers([{
