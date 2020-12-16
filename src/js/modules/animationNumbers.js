@@ -1,15 +1,16 @@
 function animationNumbers(arrObjects) {
-	arrObjects.forEach(({ selectorNum, speedAmimation = 5, startNum, endNum }) => {
+	arrObjects.forEach(({ selectorNum, speedAmimation = 5, startNum, endNum, step = 1 }) => {
 		let number = document.querySelector(selectorNum);
-
+		onScroll();
 		window.addEventListener('scroll', onScroll);
-
 		function onScroll() {
 			if (isElementInViewport(number)) {
 				window.removeEventListener('scroll', onScroll);
 				let interval = setInterval(() => {
-					number.textContent = ++startNum;
-					if (startNum >= endNum) {
+					if (startNum <= endNum) {
+						number.textContent = startNum;
+						startNum += step;
+					} else {
 						clearInterval(interval);
 					}
 				}, speedAmimation);
