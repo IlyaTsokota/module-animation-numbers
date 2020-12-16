@@ -1,13 +1,11 @@
 function animationNumbers(arrObjects) {
-	arrObjects.forEach(({ selectorNum, speedAmimation, startNum, endNum }) => {
-		let number = document.querySelector(selectorNum),
-			numberTop = number.getBoundingClientRect().top;
+	arrObjects.forEach(({ selectorNum, speedAmimation = 5, startNum, endNum }) => {
+		let number = document.querySelector(selectorNum);
 
-		onScroll();
 		window.addEventListener('scroll', onScroll);
 
 		function onScroll() {
-			if (window.pageYOffset > numberTop - window.innerHeight) {
+			if (isElementInViewport(number)) {
 				window.removeEventListener('scroll', onScroll);
 				let interval = setInterval(() => {
 					number.textContent = ++startNum;
@@ -17,7 +15,29 @@ function animationNumbers(arrObjects) {
 				}, speedAmimation);
 			}
 		}
+
+
 	});
+}
+
+function isElementInViewport(el) {
+	let top = el.offsetTop,
+		left = el.offsetLeft,
+		width = el.offsetWidth,
+		height = el.offsetHeight;
+
+	while (el.offsetParent) {
+		el = el.offsetParent;
+		top += el.offsetTop;
+		left += el.offsetLeft;
+	}
+
+	return (
+		top < (window.pageYOffset + window.innerHeight) &&
+		left < (window.pageXOffset + window.innerWidth) &&
+		(top + height) > window.pageYOffset &&
+		(left + width) > window.pageXOffset
+	);
 }
 
 export default animationNumbers;

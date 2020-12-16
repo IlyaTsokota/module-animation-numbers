@@ -4,11 +4,11 @@ window.addEventListener("DOMContentLoaded", () => {
 		selectorNum: '.num__first',
 		speedAmimation: 1,
 		startNum: 1,
-		endNum: 11510
+		endNum: 1000
 	}, {
 		selectorNum: '.num__second',
 		speedAmimation: 5,
 		startNum: 1,
-		endNum: 115
+		endNum: 2000
 	}]);
 });
